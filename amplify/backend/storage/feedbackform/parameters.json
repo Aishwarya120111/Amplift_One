@@ -1,0 +1,5 @@
+{
+    "tableName": "feedback",
+    "partitionKeyName": "FirstName",
+    "partitionKeyType": "S"
+}

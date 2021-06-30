@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/feedform",
+      "lambdaFunction": "feedbackformfunction",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/feedform"
+    }
+  ],
+  "resourceName": "feedbackmap",
+  "apiName": "feedbackmap",
+  "functionArns": [
+    {
+      "lambdaFunction": "feedbackformfunction"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-feedbackform-dev-123755-authRole",
+    "unAuthRoleName": "amplify-feedbackform-dev-123755-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "feedbackformfunction",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

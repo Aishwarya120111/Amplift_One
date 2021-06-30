@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "storage": {
+      "feedbackform": [
+        "create",
+        "read"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
