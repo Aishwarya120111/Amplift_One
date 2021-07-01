@@ -10,20 +10,20 @@ Amplify.configure(awsExports);
 async function addContact() {
   const data = {
     body: {
-      firstname: formState.firstname,
-      lastname: formState.lastname,
-      mailid: formState.mailid,
-      feedbackmessage: formState.feedbackmessage
+      FirstName: formState.FirstName,
+      LastName: formState.LastName,
+      MailId: formState.MailId,
+      FeedbackMessage: formState.FeedbackMessage
     }
   };
 
   console.log(data);
   const apiData = await API.post('feedbackmap', '/feedform', data);
   console.log({ apiData });
-  alert('Feedback Sent Successfully');
+  alert('Mail sent');
 }
 
-const formState = { firstname: '', lastname: '', mailid: '', feedbackmessage: '' };
+const formState = { FirstName: '', LastName: '', MailId: '', FeedbackMessage: '' };
 
 function updateFormState(key, value) {
   formState[key] = value;
@@ -33,24 +33,24 @@ function App() {
   return (
     <Container>
     <div>
-      <h3>Feedback Form</h3>
+      <h3>Get in touch</h3>
       <br/>
         <Form>
           <Form.Group>
-            <Form.Label>First Name</Form.Label>
-            <Form.Control placeholder="FirstName" onChange={e => updateFormState('firstname', e.target.value)} />
+            <Form.Label>FirstName</Form.Label>
+            <Form.Control placeholder="FirstName" onChange={e => updateFormState('FirstName', e.target.value)} />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Last Name</Form.Label>
-            <Form.Control placeholder="LastName" onChange={e => updateFormState('lastname', e.target.value)} />
+            <Form.Label>LastName</Form.Label>
+            <Form.Control placeholder="LastName" onChange={e => updateFormState('LastName', e.target.value)} />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Mail Id</Form.Label>
-            <Form.Control placeholder="MailId" onChange={e => updateFormState('mailid', e.target.value)} />
+            <Form.Label>MailId</Form.Label>
+            <Form.Control placeholder="MailId" onChange={e => updateFormState('MailId', e.target.value)} />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Feedback Message</Form.Label>
-            <Form.Control placeholder="FeedbackMessage" onChange={e => updateFormState('feedbackmessage', e.target.value)} />
+            <Form.Label>FeedbackMessage</Form.Label>
+            <Form.Control placeholder="FeedbackMessage" onChange={e => updateFormState('FeedbackMessage', e.target.value)} />
           </Form.Group>
           <Button onClick={addContact}>Send a message</Button>
         </Form>
