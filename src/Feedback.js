@@ -13,7 +13,7 @@ async function addContact() {
   const data = {
     body: {
       FirstName: formState.FirstName,
-      LastName: formState.LastName,
+      
       MailId: formState.MailId,
       FeedbackMessage: formState.FeedbackMessage
     }
@@ -25,7 +25,7 @@ async function addContact() {
   alert('Mail sent');
 }
 
-const formState = { FirstName: '', LastName: '', MailId: '', FeedbackMessage: '' };
+const formState = { FirstName: '',  MailId: '', FeedbackMessage: '' };
 
 function updateFormState(key, value) {
   formState[key] = value;
@@ -34,7 +34,7 @@ function updateFormState(key, value) {
 function Feedback() {
   const { search } = useLocation();
   console.log(search);
-  const {firstname, lastname, email} = queryString.parse(search);
+  const {firstname, email} = queryString.parse(search);
 
   return (
     <Container>
@@ -46,10 +46,10 @@ function Feedback() {
             <Form.Label>FirstName</Form.Label>
             <Form.Control placeholder="FirstName" value= {firstname} onChange={updateFormState('FirstName', firstname)} />
           </Form.Group>
-          <Form.Group>
+          {/* <Form.Group>
             <Form.Label>LastName</Form.Label>
             <Form.Control placeholder="LastName" value={lastname} onChange={updateFormState('LastName', lastname)} />
-          </Form.Group>
+          </Form.Group> */}
           <Form.Group>
             <Form.Label>MailId</Form.Label>
             <Form.Control placeholder="MailId" value={email} onChange={updateFormState('MailId', email)} />

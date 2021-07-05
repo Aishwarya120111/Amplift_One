@@ -41,7 +41,7 @@ app.post('/feedform', function(req, res) {
     TableName : process.env.STORAGE_FEEDBACKFORM_NAME,
     Item : {
       FirstName: req.body.FirstName,
-      LastName: req.body.LastName,
+      
       Mailid: req.body.Mailid,
       FeedbackMessage: req.body.FeedbackMessage
     }
