@@ -39,15 +39,15 @@ function Feedback() {
   return (
     <Container>
     <div>
-      <h3>Get in touch</h3>
+      <h3>Feedback Form</h3>
       <br/>
         <Form>
           <Form.Group>
-            <Form.Label>FirstName</Form.Label>
+            <Form.Label>First Name</Form.Label>
             <Form.Control placeholder="FirstName" value= {firstname} onChange={updateFormState('FirstName', firstname)} />
           </Form.Group>
           <Form.Group>
-            <Form.Label>LastName</Form.Label>
+            <Form.Label>Last Name</Form.Label>
             <Form.Control placeholder="LastName" value={lastname} onChange={updateFormState('LastName', lastname)} />
           </Form.Group>
           <Form.Group>
@@ -55,7 +55,7 @@ function Feedback() {
             <Form.Control placeholder="MailId" value={email} onChange={updateFormState('Mailid', email)} />
           </Form.Group>
           <Form.Group>
-            <Form.Label>FeedbackMessage</Form.Label>
+            <Form.Label>Feedback Message</Form.Label>
             <Form.Control placeholder="FeedbackMessage" onChange={e => updateFormState('FeedbackMessage', e.target.value)} />
           </Form.Group>
           <Button onClick={addContact}>Send a message</Button>
