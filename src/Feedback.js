@@ -12,8 +12,8 @@ Amplify.configure(awsExports);
 async function addContact() {
   const data = {
     body: {
-      Name: formState.Name,
       
+      Name: formState.Name,
       Mailid: formState.Mailid,
       FeedbackMessage: formState.FeedbackMessage
     }
