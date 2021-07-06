@@ -12,8 +12,7 @@ Amplify.configure(awsExports);
 async function addContact() {
   const data = {
     body: {
-      
-      Name: formState.Name,
+      FirstName: formState.FirstName,
       Mailid: formState.Mailid,
       FeedbackMessage: formState.FeedbackMessage
     }
@@ -25,7 +24,7 @@ async function addContact() {
   alert('Mail sent');
 }
 
-const formState = { Name: '',  Mailid: '', FeedbackMessage: '' };
+const formState = { FirstName: '',  Mailid: '', FeedbackMessage: '' };
 
 function updateFormState(key, value) {
   formState[key] = value;
@@ -44,7 +43,7 @@ function Feedback() {
         <Form>
           <Form.Group>
             <Form.Label>Name</Form.Label>
-            <Form.Control placeholder="Name" value= {name} onChange={updateFormState('Name', name)} />
+            <Form.Control placeholder="Name" value= {name} onChange={updateFormState('FirstName', name)} />
           </Form.Group>
           {/* <Form.Group>
             <Form.Label>Last Name</Form.Label>
