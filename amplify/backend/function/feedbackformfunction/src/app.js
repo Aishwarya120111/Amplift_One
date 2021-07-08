@@ -42,7 +42,8 @@ app.post('/feedform', function(req, res) {
     Item : {
       FirstName: req.body.FirstName,
       Mailid: req.body.Mailid,
-      FeedbackMessage: req.body.FeedbackMessage
+      FeedbackMessage: req.body.FeedbackMessage,
+      Rating: req.body.Rating
     }
   }
   docClient.put(params, function(err,data){

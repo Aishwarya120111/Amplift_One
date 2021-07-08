@@ -14,7 +14,8 @@ async function addContact() {
     body: {
       FirstName: formState.FirstName,
       Mailid: formState.Mailid,
-      FeedbackMessage: formState.FeedbackMessage
+      FeedbackMessage: formState.FeedbackMessage,
+      Rating: formState.Rating
     }
   };
 
@@ -24,7 +25,7 @@ async function addContact() {
   alert('Mail sent');
 }
 
-const formState = { FirstName: '',  Mailid: '', FeedbackMessage: '' };
+const formState = { FirstName: '',  Mailid: '', FeedbackMessage: '' ,Rating:''};
 
 function updateFormState(key, value) {
   formState[key] = value;
@@ -56,6 +57,10 @@ function Feedback() {
           <Form.Group>
             <Form.Label>Feedback Message</Form.Label>
             <Form.Control placeholder="Feedback Message" onChange={e => updateFormState('FeedbackMessage', e.target.value)} />
+          <br></br>
+          <Form.Label>Rating</Form.Label>
+            <Form.Control placeholder="Feedback Message" onChange={e => updateFormState('Rating', e.target.value)} />
+          <br></br>
           </Form.Group>
           <Button onClick={addContact}>Send a message</Button>
         </Form>
